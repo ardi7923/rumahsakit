@@ -12,7 +12,7 @@
       </li>
       <hr class="sidebar-divider">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ url('admin/patient') }}">
           <i class="fas fa-fw fa-users"></i>
           <span>Pasien</span></a>
       </li>

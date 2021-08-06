@@ -1,5 +1,5 @@
 <center>
-    <button class="btn btn-circle btn-sm btn-warning btn_edit" data-url='{{ $url_edit }}' data-toggle="tooltip" title="Ubah Data">
+    <button class="btn btn-circle btn-sm btn-warning btn_edit" data-size="{{ $size ?? md }}" data-url='{{ $url_edit }}' data-toggle="tooltip" title="Ubah Data">
         <i class="fa fa-edit"> </i>
     </button>
 

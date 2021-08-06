@@ -9,9 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="token" content="{{ csrf_token() }}">
+    
   <!-- <link href="img/logo/logo.png" rel="icon"> -->
-  <title>@yield("title")</title>
+  <title>@yield("title_page")</title>
   @include('layouts.app.styles')
+  @yield('styles_page')
 </head>
 
 <body id="page-top">
@@ -23,12 +26,7 @@
 
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800"></h1>
-            <ol class="breadcrumb">
 
-            </ol>
-          </div>
 
           @yield("content")
 
@@ -48,6 +46,10 @@
     <i class="fas fa-angle-up"></i>
   </a>
   @include('layouts.app.scripts')
+
+  @yield('scripts_page')
+
+  @yield("js")
   
 </body>
 
