@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Room;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Time;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,6 +22,10 @@ class DatabaseSeeder extends Seeder
 
         if(!Room::count()){
             $this->call(RoomSeeder::class);
+        }
+
+        if(!Time::count()){
+            $this->call(TimeSeeder::class);
         }
     }
 }
