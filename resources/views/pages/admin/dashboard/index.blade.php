@@ -1,63 +1,158 @@
-@extends("layouts.app")
+@extends('layouts.app')
 
-@section("title")
+@section('title_page')
   Dashboard
 @endsection
-@section("content")
-<!-- Row -->
-<div class="row">
-  <div class="col-lg-6">
-    <!-- Popover basic -->
-    <div class="card mb-4">
-      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Popover Basic</h6>
-      </div>
-      <div class="card-body">
-        <p>This example basic popover</p>
-        <button type="button" class="btn btn-primary" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click
-          to toggle popover</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-6">
-    <!-- Dismiss on next click -->
-    <div class="card mb-4">
-      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Dismiss on next click</h6>
-      </div>
-      <div class="card-body">
-        <p>Use the focus trigger to dismiss popovers on the user’s next click of
-          <code>&lt;a&gt;</code> different element than the toggle element not
-          using<code>&lt;button&gt;.</code>
-        </p>
-        <a tabindex="0" class="btn btn-primary" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissiblepopover</a>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-lg-12">
-    <!-- Four directions -->
-    <div class="card mb-4">
-      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Four directions</h6>
-      </div>
-      <div class="card-body">
-        <p>Four options are available: top, right, bottom, and left aligned.</p>
-        <button type="button" class="btn btn-primary mb-1" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-          Popover on top
-        </button>
-        <button type="button" class="btn btn-primary mb-1" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-          Popover on right
-        </button>
-        <button type="button" class="btn btn-primary mb-1" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-          Popover on bottom
-        </button>
-        <button type="button" class="btn btn-primary mb-1" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-          Popover on left
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Row-->
+@section('styles_page')
+    <!-- Custom styles for this page -->
+  <link href="{{ asset('assets-admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ asset('plugins/sweetalert2/dist/sweetalert2.min.css') }}">
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
+@endsection
+
+@section('content')
+
+
+<div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Dokter</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ $doctor }} </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-user-nurse fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Pasien</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ $patient }} </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-gray-300"></i>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">User Dokter</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"> {{ $user_doctor }} </div>
+                        </div>
+                         
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-unlock-alt fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-12 col-lg-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Data Pasien  </h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th width="100px"> No</th>
+                          <th>Nama</th>
+                          <th> Ruangan</th>
+                          <th> Status </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @forelse ($patients as $i => $p)
+                          <tr>
+                            <td> {{ $i+1 }} </td>
+                            <td> {{ $p->name }} </td>
+                            <td> {{ $p->room }} </td>
+                            <td> {{ $p->status }} </td>
+                          </tr>
+                        @empty
+                        <tr>
+                          <td colspan="4"> DATA KOSONG </td> 
+                        </tr>
+                        @endforelse
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+
+        </div>
+
+@stop
+
+@section('scripts_page')
+
+  <!-- Page level custom scripts -->
+  <script src="{{ asset('plugins/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
+
+@endsection
+
+@section('js')
+ 
+ <script type="text/javascript">
+
+
+
+</script>
 @endsection
