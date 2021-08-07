@@ -26,5 +26,6 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
         Route::get("doctor","DoctorController@index");
 
         Route::get("schedule","ScheduleController@get");
+        Route::post("schedule/submission","ScheduleController@submission");
     });
 });
