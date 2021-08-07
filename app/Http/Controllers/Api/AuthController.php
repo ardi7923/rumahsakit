@@ -26,11 +26,20 @@ class AuthController extends Controller
                 'token'    => $token
             ];
 
-            return $this->response
+            if($user->role == "doctor" || $user->role == "patient"){
+                return $this->response
                 ->setCode(200)
                 ->setMsg("Login Successfuly")
                 ->setData($data)
                 ->get();
+            }else{
+                return $this->response
+                ->setCode(403)
+                ->setMsg("Pelanggaran hak akses")
+                ->setErrors("Forbidden")
+                ->get();
+            }
+            
         } else {
             return $this->response
                 ->setCode(400)
