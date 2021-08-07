@@ -4,6 +4,7 @@ namespace App\Services;
 
 use DB;
 use App\Models\Doctor;
+use App\Models\User;
 use Image;
 use Illuminate\Support\Facades\Storage;
 use File;
@@ -33,6 +34,9 @@ class DoctorService
             $data = Doctor::find((int) $params["id"]);
             File::delete("storage/images/".$data->image);
             $data->delete();
+            if(User::where("doctor_id",$params["id"])->count() > 0){
+                User::where("doctor_id",$params["id"])->delete();
+            }
         });
     }
 
