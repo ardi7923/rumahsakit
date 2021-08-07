@@ -154,7 +154,7 @@ class DoctorController extends CrudAjax
                 </button>
             
             
-                <button class="btn btn-circle btn-sm btn-danger btn_delete" data-url="'.url("tes").'" data-text="" data-toggle="tooltip" title="Hapus Data">
+                <button class="btn btn-circle btn-sm btn-danger btn_delete" data-url="'.url("admin/doctor/$data->id").'" data-text="" data-toggle="tooltip" title="Hapus Data">
                     <i class="fa fa-trash"> </i>
                 </button>
             </center>';
