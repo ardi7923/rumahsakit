@@ -98,7 +98,7 @@ Dokter
 
     $(".modal_add").click(showForm);
     $('body').on("click", ".btn_edit", showForm);
-    $('body').on("click", ".btn_detail", showForm);
+    $('body').on("click", ".btn_edit_attachment", showForm);
     $('body').on("click", ".btn_delete", deleteForm);
 
     $('#modals').on("submit", ".forms", saveWithImage);

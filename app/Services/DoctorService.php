@@ -35,4 +35,25 @@ class DoctorService
             $data->delete();
         });
     }
+
+    public function updateAttachment($request,$id)
+    {
+        DB::transaction(function () use ($request,$id) {
+            $data = Doctor::find($id);
+            File::delete("storage/images/".$data->image);
+            
+            $image      = $request->image;
+            $parseImage = replaceStringBase64($image);
+            $imageName = $request->nip.'-'.time().'.'.getTypeFileBase64($image);
+            $imageFile =  (string) Image::make($parseImage)->encode('data-url');
+
+            Storage::putFileAs('public/images/', $imageFile, $imageName);
+
+            $data->update([
+                "image" => $imageName
+            ]);
+        });
+
+        return  response()->json("berhasil", 200);
+    }
 }

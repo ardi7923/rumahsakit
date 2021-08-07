@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-md-3 label-control">Logo</label>
+            <label class="col-md-3 label-control">Foto</label>
             <div class="col-md-9 ">
                 <label class="file center-block">
 

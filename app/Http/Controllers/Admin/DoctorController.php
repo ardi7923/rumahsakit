@@ -83,6 +83,18 @@ class DoctorController extends CrudAjax
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function editAttachment($id)
+    {
+        $data = $this->model->findOrFail($id);
+        return renderToJson($this->folder."edit-attachment",compact("data"));
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -92,6 +104,18 @@ class DoctorController extends CrudAjax
     public function update(Request $request, $id)
     {
         return $this->setParams($id)->change();
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateAttachment(Request $request, $id)
+    {
+        return $this->facade->updateAttachment($request,$id);
     }
 
     /**
@@ -120,13 +144,20 @@ class DoctorController extends CrudAjax
                 return "<center><img  src='".asset("storage/images/".$data->image)  ."' width='130px' > </center>";
             })
             ->addColumn('action', function ($data) {
-                return view('components.datatables.action', [
-                    'data'        => $data,
-                    'size'        => "lg",
-                    'url_edit'    => url($this->url . $data->id . '/edit'),
-                    'url_destroy' => url($this->url . $data->id),
-                    'delete_text' => view($this->folder . 'delete', compact('data'))->render()
-                ]);
+                return '<center>
+                <button class="btn btn-circle btn-sm btn-success btn_edit_attachment" data-size="md" data-url="'. url("admin/doctor/$data->id/edit-attachment").'" data-toggle="tooltip" title="Ubah Gambar">
+                    <i class="fa fa-image"> </i>
+                </button>
+
+                <button class="btn btn-circle btn-sm btn-warning btn_edit" data-size="lg" data-url="'. url("admin/doctor/$data->id/edit").'" data-toggle="tooltip" title="Ubah Data">
+                    <i class="fa fa-edit"> </i>
+                </button>
+            
+            
+                <button class="btn btn-circle btn-sm btn-danger btn_delete" data-url="'.url("tes").'" data-text="" data-toggle="tooltip" title="Hapus Data">
+                    <i class="fa fa-trash"> </i>
+                </button>
+            </center>';
             })
             ->rawColumns(["image_show","action"])
             ->make(true);
