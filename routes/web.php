@@ -29,5 +29,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
 
 
     Route::resource("patient","PatientController");
+    Route::resource("doctor","DoctorController");
+    Route::resource("user-doctor","UserDoctorController");
     
 });

@@ -18,9 +18,15 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ url('admin/doctor') }}">
           <i class="fas fa-fw fa-user-nurse"></i>
           <span>Dokter</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('admin/user-doctor') }}">
+          <i class="fas fa-fw fa-user-nurse"></i>
+          <span>User Dokter</span></a>
       </li>
 
 
