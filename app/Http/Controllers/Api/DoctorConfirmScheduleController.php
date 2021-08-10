@@ -17,4 +17,15 @@ class DoctorConfirmScheduleController extends Controller
         $data = Schedule::find($request->schedule_id);
         return $responseService->setCode(200)->setMsg("Jadwal Berhasil Di konfirmasi")->setData($data)->get();
     }
+
+    public function reject(Request $request,ResponseService $responseService)
+    {
+        Schedule::find($request->schedule_id)->update([
+            "status"             => 0,
+            "consult_account_id" => null
+        ]);
+
+        $data = Schedule::find($request->schedule_id);
+        return $responseService->setCode(200)->setMsg("Jadwal Berhasil Di Tolak")->setData($data)->get();
+    }
 }
