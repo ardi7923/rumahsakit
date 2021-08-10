@@ -16,7 +16,7 @@ class PatientScheduleController extends Controller
         Schedule::where("date", "<", now())->update([
             "closed" => 1
         ]);
-        $data = Schedule::where("consult_account_id", Auth::user()->patient_id)->get();
+        $data = Schedule::where("consult_account_id", Auth::user()->patient_id)->with("doctor")->get();
         return $responseService->setCode(200)->setMsg("Schedule For Patient Active")->setData($data)->get();
     }
 }
