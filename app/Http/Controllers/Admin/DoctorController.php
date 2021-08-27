@@ -141,7 +141,7 @@ class DoctorController extends CrudAjax
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn("image_show",function($data){
-                return "<center><img  src='".asset("storage/images/".$data->image)  ."' width='130px' > </center>";
+                return "<center><img  src='".$data->image  ."' width='130px' > </center>";
             })
             ->addColumn('action', function ($data) {
                 return '<center>

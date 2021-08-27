@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Doctor;
+use App\Models\ConsultAccount;
 
 class Schedule extends Model
 {
@@ -19,6 +19,6 @@ class Schedule extends Model
     }
 
     public function patient(){
-        return $this->belongsTo(Patient::class,"consult_account_id","id");
+        return $this->belongsTo(ConsultAccount::class,"consult_account_id","id");
     }
 }
