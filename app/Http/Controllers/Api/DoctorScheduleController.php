@@ -11,7 +11,7 @@ use Auth;
 class DoctorScheduleController extends Controller
 {
     public function get(ResponseService $responseService){
-        Schedule::where("date", "<", now())->update([
+        Schedule::where("date", ">", now())->update([
             "closed" => 1
         ]);
         $data = Schedule::where("doctor_id", Auth::user()->doctor_id)->where("consult_account_id","!=",null)->with("patient")->get();
