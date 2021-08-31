@@ -13,7 +13,7 @@ class PatientScheduleController extends Controller
 
     public function get(ResponseService $responseService)
     {
-        Schedule::where("date", ">", now())->update([
+        Schedule::whereDate("date", ">", now())->update([
             "closed" => 1
         ]);
         
