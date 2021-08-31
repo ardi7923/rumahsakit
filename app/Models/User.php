@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'username',
         'doctor_id',
+        'patient_id',
         'password',
         'role'
     ];
