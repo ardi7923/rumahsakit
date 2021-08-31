@@ -30,22 +30,13 @@ class RegisterController extends Controller
                     "phone"      => $request->phone,
                 ]);
                 
-                $user = User::create([
+                User::create([
                     "name"       => $request->name,
                     "username"   => $request->username,
                     "password"   => bcrypt($request->password),
                     "role"       => "patient",
                     "patient_id" => $patient->id
                 ]);
-
-
-                $token =  $user->createToken('authToken')->plainTextToken;
-            $data = [
-                "name" => $user->name,
-                "role" => $user->role,
-                "token" => $token
-            ];
-
 
         });
 
