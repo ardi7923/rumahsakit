@@ -116,6 +116,9 @@ class PatientController extends CrudAjax
         
         return DataTables::of($data)
         ->addIndexColumn()
+        ->addColumn("gender_show",function($data){
+            return ($data->gender == "M") ? "L" : "P";
+        })
         ->addColumn('action', function ($data) {
             return view('components.datatables.action', [
                 'data'        => $data,

@@ -81,7 +81,7 @@ Pasien
                     data: 'name'
                 },
                 {
-                    data: 'gender'
+                    data: 'gender_show'
                 },
                 {
                     data: 'address'

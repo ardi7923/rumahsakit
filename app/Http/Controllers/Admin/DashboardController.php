@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
 use App\Models\Patient;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -14,8 +15,9 @@ class DashboardController extends Controller
     {
         $doctor = Doctor::count();
         $patient = Patient::count();
+        $schedule = Schedule::where("status",">",0)->count();
         $user_doctor = User::where("role","doctor")->count();
         $patients = Patient::orderBy("id","desc")->limit(10)->get();
-        return view('pages.admin.dashboard.index',compact("doctor","patient","user_doctor","patients"));
+        return view('pages.admin.dashboard.index',compact("doctor","patient","user_doctor","patients","schedule"));
     }
 }
