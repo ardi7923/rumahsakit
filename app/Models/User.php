@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function doctor() {
         return $this->belongsTo(Doctor::class);
     }
+
+    public function patient() {
+        return $this->belongsTo(ConsultAccount::class,"patient_id","id");
+    }
 }

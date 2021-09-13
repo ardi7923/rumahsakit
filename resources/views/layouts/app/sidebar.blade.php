@@ -29,6 +29,12 @@
           <span>User Dokter</span></a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('admin/account-consultation') }}">
+          <i class="fas fa-fw fa-unlock-alt"></i>
+          <span>User Konsultasi</span></a>
+      </li>
+
 
 
       <hr class="sidebar-divider">

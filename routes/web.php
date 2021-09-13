@@ -33,5 +33,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'namespace' => 'Admin
     Route::get("doctor/{id}/edit-attachment","DoctorController@editAttachment");
     Route::post("doctor/{id}/update-attachment","DoctorController@updateAttachment");
     Route::resource("user-doctor","UserDoctorController");
+    Route::resource("account-consultation","AccountConsultation");
     
 });
