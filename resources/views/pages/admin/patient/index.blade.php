@@ -30,6 +30,7 @@ Pasien
                 <thead>
                     <tr>
                         <th width="50px">No</th>
+                        <th>NIK</th>
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
                         <th>Alamat</th>
@@ -76,6 +77,9 @@ Pasien
                     data: 'DT_RowIndex',
                     orderable: false,
                     searchable: false
+                },
+                {
+                    data: 'nik'
                 },
                 {
                     data: 'name'

@@ -24,12 +24,13 @@ class PatientRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required",
-            "gender" => "required",
+            "nik"     => "required",
+            "name"    => "required",
+            "gender"  => "required",
             "address" => "required",
-            "phone" => "required",
-            "room" => "required",
-            "status" => "required"
+            "phone"   => "required",
+            "room"    => "required",
+            "status"  => "required"
         ];
     }
 }

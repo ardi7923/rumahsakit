@@ -9,6 +9,13 @@
         @csrf
 
         <div class="form-group row">
+            <label class="col-sm-3 col-form-label">NIK </label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="nik" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label class="col-sm-3 col-form-label">Nama </label>
             <div class="col-sm-9">
                 <input type="text" class="form-control" name="name" required>
@@ -43,7 +50,7 @@
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">Ruangan </label>
             <div class="col-sm-9">
-                <select name="room" class="form-control"  required>
+                <select name="room" class="form-control" required>
                     <option selected disabled value=""> --PILIH--</option>
                     @foreach ($rooms as $r)
                     <option> {{ $r->name }} </option>
@@ -58,8 +65,8 @@
             <div class="col-sm-9">
                 <select class="form-control" name="status" required>
                     <option disabled selected value="">--PILIH--</option>
-                    <option > Masa Pemulihan </option>
-                    <option > Perawatan Insentif </option>
+                    <option> Masa Pemulihan </option>
+                    <option> Perawatan Insentif </option>
                 </select>
             </div>
         </div>
