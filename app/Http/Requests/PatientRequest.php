@@ -24,7 +24,7 @@ class PatientRequest extends FormRequest
     public function rules()
     {
         return [
-            "nik"     => "required",
+            "nik"     => "required|unique:patients,nik,". $this->nik_old .",nik",
             "name"    => "required",
             "gender"  => "required",
             "address" => "required",
