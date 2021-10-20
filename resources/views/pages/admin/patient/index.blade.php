@@ -32,6 +32,7 @@ Pasien
                         <th width="50px">No</th>
                         <th>NIK</th>
                         <th>Nama</th>
+                        <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
                         <th>Alamat</th>
                         <th>No Telp</th>
@@ -83,6 +84,9 @@ Pasien
                 },
                 {
                     data: 'name'
+                },
+                {
+                    data: 'birthday_show'
                 },
                 {
                     data: 'gender_show'

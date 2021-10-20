@@ -119,6 +119,9 @@ class PatientController extends CrudAjax
         ->addColumn("gender_show",function($data){
             return ($data->gender == "M") ? "L" : "P";
         })
+        ->addColumn("birthday_show",function($data){
+            return ($data->birthday) ? date_indo($data->birthday) : "-";
+        })
         ->addColumn('action', function ($data) {
             return view('components.datatables.action', [
                 'data'        => $data,
