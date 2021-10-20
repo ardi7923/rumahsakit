@@ -67,6 +67,8 @@
                     <option disabled selected value="">--PILIH--</option>
                     <option> Masa Pemulihan </option>
                     <option> Perawatan Insentif </option>
+                    <option> Keluar Hidup </option>
+                    <option> Keluar Mati </option>
                 </select>
             </div>
         </div>
