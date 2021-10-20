@@ -23,6 +23,13 @@
         </div>
 
         <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Tanggal Lahir </label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control" name="birthday" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label class="col-sm-3 col-form-label">Jenis Kelamin </label>
             <div class="col-sm-9">
                 <select class="form-control" name="gender" required>

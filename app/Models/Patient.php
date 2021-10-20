@@ -9,7 +9,9 @@ class Patient extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = [
+        'nik_old',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.

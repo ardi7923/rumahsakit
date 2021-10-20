@@ -13,6 +13,7 @@
             <label class="col-sm-3 col-form-label">NIK </label>
             <div class="col-sm-9">
                 <input type="text" class="form-control" name="nik" value="{{ $data->nik }}" required>
+                <input type="hidden" class="form-control" name="nik_old" value="{{ $data->nik }}" required>
             </div>
         </div>
 
@@ -20,6 +21,13 @@
             <label class="col-sm-3 col-form-label">Nama </label>
             <div class="col-sm-9">
                 <input type="text" class="form-control" name="name" value="{{ $data->name }}" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Tanggal Lahir </label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control" name="birthday" value="{{ $data->birthday }}" required>
             </div>
         </div>
 
